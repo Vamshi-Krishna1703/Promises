@@ -30,27 +30,6 @@
     <div id = "wear">
         
     </div>
-    <script>
-    function getProp(){
-let city = document.getElementById("cityname").value;
-var y=document.getElementById("city");
-y.innerHTML = "<h2>Weather at "+city+"</h2>"
-let weather = fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=3dd0107503cefb19bbf5bc1b2c2b6a1a");
-// console.log(weather);
-weather.then((result)=>{
-     let res = result.json();
-     res.then((finalRes)=>{
-        //  console.log(finalRes);
-        var x = document.getElementById("wear");
-        x.innerHTML = "<h3>Temperature : "+finalRes.main.temp+"k</h3>"+
-        "<h3>Feels Like : "+finalRes.main.feels_like+"k</h3>"+
-        "<h3>Temperature Minimum : "+finalRes.main.temp_min+"k</h3>"+
-        "<h3>Temperature Maximum : "+finalRes.main.temp_max+"k</h3>"+
-        "<h3>Pressure : "+finalRes.main.pressure+"</h3>"
-        +"<h3>Humidity : "+finalRes.main.humidity+"</h3>"+
-        "<h3>Weather Condition : "+finalRes.weather[0].description+"</h3>"
-
-     })
-})</script>
+    <script src="index.js"></script>
 </body>
 </html>
